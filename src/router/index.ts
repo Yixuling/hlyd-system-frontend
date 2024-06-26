@@ -1,23 +1,38 @@
+import type { RouteRecordRaw } from 'vue-router'
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+
+// 静态路由
+const staticRoutes: RouteRecordRaw[] = [
+  {
+    path: '/',
+    name: 'index',
+    component: () => import('@/layout/Layout.vue'),
+  },
+]
+//
+// // 动态路由
+// export const dynamicRoutes: RouteRecordRaw[] = [
+//   {
+//     path: '/',
+//     name: 'home',
+//     redirect: '/home',
+//     component: () => import('@/layout/Layout.vue'),
+//     children: [
+//       {
+//         path: '/home',
+//         name: 'home',
+//         component: () => import('@/layout/Layout.vue'),
+//       },
+//     ],
+//   },
+// ]
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: HomeView
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
-    }
-  ]
+    ...staticRoutes,
+    // ...dynamicRoutes,
+  ],
 })
 
 export default router
