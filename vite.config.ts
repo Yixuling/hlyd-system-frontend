@@ -14,10 +14,10 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
   const env = loadEnv(mode, process.cwd())
   return {
     plugins: [
-      vue(),
+      vue(),222222222222
       vueJsx(),
       UnoCSS(),
-      // MOCK 服务
+      // MOCK 服务2222222
       env.VITE_MOCK_DEV_SERVER === 'true' ? mockDevServerPlugin() : null,
       // 自动导入函数
       AutoImport({
