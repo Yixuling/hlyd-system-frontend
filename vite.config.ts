@@ -15,7 +15,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
   return {
     plugins: [
       vue(),222222222222
-      vueJsx(),
+      vueJsx(),23232333333333
       UnoCSS(),
       // MOCK 服务2222222
       env.VITE_MOCK_DEV_SERVER === 'true' ? mockDevServerPlugin() : null,
